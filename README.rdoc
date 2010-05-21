@@ -1,0 +1,32 @@
+== Devise Example
+
+Example App using devise. http://github.com/plataformatec/devise
+
+== Installation
+
+Install warden and devise gems if you don't have them installed:
+
+  sudo gem install warden devise
+
+Rake devise setup task:
+
+  rake devise:setup
+
+This will:
+
+* drop any existing database
+* create a new database
+* migrate the database
+* create a default user and admin
+
+Run the server and use the credentials provided by the rake task to sign in and test the application.
+
+The example is using "rails-footnotes":http://github.com/josevalim/rails-footnotes gem. If you don't have it installed, run the following command to install the gem:
+
+  sudo gem install rails-footnotes
+
+If you don't want to install this gem, just comment the line in the environment.rb file.
+
+== License
+
+MIT License. Copyright 2009 Plataforma Tecnologia. http://blog.plataformatec.com.br
