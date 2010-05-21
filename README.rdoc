@@ -1,25 +1,19 @@
-== Devise Example
+== Devise OpenID Example
 
-Example App using devise. http://github.com/plataformatec/devise
+An example of how to use OpenID authentication in a Devise app. Forked from the original devise_example app and modified as little as possible.
 
 == Installation
 
-Install warden and devise gems if you don't have them installed:
+Install the required gems:
 
   sudo gem install warden devise
+  sudo gem install --pre devise_openid_authenticatable
 
-Rake devise setup task:
+Migrate your database:
 
-  rake devise:setup
+  rake db:migrate
 
-This will:
-
-* drop any existing database
-* create a new database
-* migrate the database
-* create a default user and admin
-
-Run the server and use the credentials provided by the rake task to sign in and test the application.
+Run the server and use a valid OpenID to sign in and test the application.
 
 The example is using "rails-footnotes":http://github.com/josevalim/rails-footnotes gem. If you don't have it installed, run the following command to install the gem:
 
