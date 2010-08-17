@@ -7,12 +7,13 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'warden', :version => '0.10.5'
-  config.gem 'devise', :version => '1.0.7'
+  config.gem 'devise', :version => '1.0.8'
   config.gem 'rails-footnotes', :version => '3.6.5'
-  config.gem 'devise_openid_authenticatable', :version => '1.0.0.alpha1'
-    
-  config.middleware.use "Rack::OpenID"
+  config.gem 'devise_openid_authenticatable', :version => '1.0.0.alpha5'
+
+  require 'warden/manager'
+  config.middleware.use "Warden::Manager"
+  config.middleware.insert_before "Warden::Manager", "Rack::OpenID"
 
   config.time_zone = 'UTC'
   config.i18n.default_locale = :en
