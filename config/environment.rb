@@ -11,9 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'rails-footnotes', :version => '3.6.5'
   config.gem 'devise_openid_authenticatable', :version => '1.0.0.alpha5'
 
-  require 'warden/manager'
-  config.middleware.use "Warden::Manager"
-  config.middleware.insert_before "Warden::Manager", "Rack::OpenID"
+  config.middleware.use "Rack::OpenID"
 
   config.time_zone = 'UTC'
   config.i18n.default_locale = :en
